@@ -51,7 +51,7 @@
 
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars-book/user-guide/quickstart/intro.html#installation"
+              href="https://polars-ja.github.io/docs-ja/user-guide/installation/"
               target="_blank"
             >
               <span class="icon"
@@ -70,10 +70,10 @@
             <pre><code class="language-python">import polars as pl</code></pre>
           </div>
 
-          <h3>Creating/reading DataFrames</h3>
+          <h3>データフレームの作成/読み込み</h3>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/concepts/data-structures/#dataframe"
               target="_blank"
             >
               <span class="icon"
@@ -83,7 +83,7 @@
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Create DataFrame</p>
+            <p>データフレームの作成</p>
             <div class="image">
               <img src="images/create_data_frame.svg" style="height: 4.7rem" />
             </div>
@@ -99,7 +99,7 @@
 
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars-book/user-guide/howcani/io/csv.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/io/csv/"
               target="_blank"
             >
               <span class="icon"
@@ -115,7 +115,7 @@
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars-book/user-guide/howcani/io/parquet.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/io/parquet.html"
               target="_blank"
             >
               <span class="icon"
@@ -127,13 +127,14 @@
             ></a>
             <p>Read parquet</p>
             <pre><code class="language-python">df = pl.read_parquet("path.parquet",
-                     columns=["select", "columns"])</code></pre>
+                     columns=["select", 
+                     "columns"])</code></pre>
           </div>
 
           <h3>Expressions</h3>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars-book/user-guide/dsl/expressions.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/expressions/operators/"
               target="_blank"
             >
               <span class="icon"
@@ -144,28 +145,28 @@
                   /></svg></span
             ></a>
             <p>
-              Polars expressions can be performed in sequence. This improves
-              readability of code.
+              Polarsのエクスプレッションは順番に
+              実行することができ、コードの可読性が向上します。
             </p>
-            <pre><code class="language-python">df \
+            <pre><code class="language-python">df \ 
   .filter(pl.col("nrs") < 4) \
-  .groupby("groups") \
-  .agg(
-    pl \
-      .all() \
-      .sum()
-)</code></pre>
+  .group_by("groups") \
+  .agg(pl \
+  .all() \
+  .sum()
+)
+</code></pre>
           </div>
         </div>
 
         <div class="column is-3">
-          <h3>Subset Observations - rows</h3>
+          <h3>観測値の部分集合 - 行</h3>
           <div class="image">
             <img src="images/subset_observations.svg" style="height: 3.16rem" />
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars-book/user-guide/dsl/expressions.html#filter-and-conditionals"
+              href="https://polars-ja.github.io/docs-ja/user-guide/getting-started/#_5"
               target="_blank"
             >
               <span class="icon"
@@ -175,7 +176,7 @@
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Filter: Extract rows that meet logical criteria.</p>
+            <p>フィルター: 論理条件を満たす行を抽出します。</p>
             <pre><code class="language-python">df.filter(pl.col("random") > 0.5)
 df.filter(
   (pl.col("groups") == "B")
@@ -184,7 +185,7 @@ df.filter(
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.sample.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/concepts/data-structures/#sample"
               target="_blank"
             >
               <span class="icon"
@@ -194,7 +195,7 @@ df.filter(
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Sample</p>
+            <p>サンプル</p>
             <pre><code class="language-python"># Randomly select fraction of rows.
 df.sample(frac=0.5)
 
@@ -202,7 +203,7 @@ df.sample(frac=0.5)
 df.sample(n=2)</code></pre>
           </div>
           <div class="group">
-            <p>Select first and last rows</p>
+            <p>先頭、末尾の行を選択する</p>
             <pre><code class="language-python"># Select first n rows
 df.head(n=2)
 
@@ -210,13 +211,13 @@ df.head(n=2)
 df.tail(n=2)</code></pre>
           </div>
 
-          <h3>Subset Variables - columns</h3>
+          <h3>観測値の部分集合 - 列</h3>
           <div class="image">
             <img src="images/subset_variables.svg" style="height: 2.64rem" />
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars-book/user-guide/howcani/selecting_data/selecting_data_expressions.html#select-a-list-of-columns"
+              href="https://polars-ja.github.io/docs-ja/user-guide/expressions/column-selections/"
               target="_blank"
             >
               <span class="icon"
@@ -226,12 +227,12 @@ df.tail(n=2)</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Select multiple columns with specific names</p>
+            <p>特定の名前を持つ複数の列を選択する</p>
             <pre><code class="language-python">df.select(["nrs", "names"])</code></pre>
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars-book/user-guide/howcani/selecting_data/selecting_data_expressions.html#select-columns-with-an-expression"
+              href="https://polars-ja.github.io/docs-ja/user-guide/expressions/column-selections/#_2" # リンクが日本語版に存在していない。
               target="_blank"
             >
               <span class="icon"
@@ -241,11 +242,11 @@ df.tail(n=2)</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Select columns whose name matches regex</p>
+            <p>正規表現に一致する名前の列を選択する</p>
             <pre><code class="language-python">df.select(pl.col("^n.*$"))</code></pre>
           </div>
 
-          <h3>Subsets - rows and columns</h3>
+          <h3>部分集合 - 行と列</h3>
           <div class="image">
             <img
               src="images/subsets_rows_and_columns.svg"
@@ -253,30 +254,30 @@ df.tail(n=2)</code></pre>
             />
           </div>
           <div class="group">
-            <p>Select rows 2-4</p>
+            <p>2~4行を選択</p>
             <pre><code class="language-python">df[2:4, :]</code></pre>
           </div>
           <div class="group">
-            <p>Select columns in positions 1 and 3 (first column is 0)</p>
+            <p>位置1と3の列を選択する（最初の列は0）</p>
             <pre><code class="language-python">df[:, [1, 3]]</code></pre>
           </div>
           <div class="group">
             <p>
-              Select rows meeting logical condition, and only the specific
-              columns
+              論理条件を満たす行を選択し、特定の列のみを抽出する
+
             </p>
             <pre><code class="language-python">df[df["random"] > 0.5, ["names", "groups"]]</code></pre>
           </div>
         </div>
 
         <div class="column is-3">
-          <h3>Reshaping Data – Change layout, sorting, renaming</h3>
+          <h3>データの整形 - レイアウト変更、並べ替え、名前変更</h3>
           <div class="group">
             <div class="image">
               <img src="images/concat_rows.svg" style="height: 5rem" />
             </div>
             <a
-              href="https://pola-rs.github.io/polars-book/user-guide/howcani/combining_data/concatenating.html#vertical-concatenation---getting-longer"
+              href="https://polars-ja.github.io/docs-ja/user-guide/getting-started/#concat"
               target="_blank"
             >
               <span class="icon"
@@ -286,7 +287,7 @@ df.tail(n=2)</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Append rows of DataFrames</p>
+            <p>データフレームの行を追加する</p>
             <pre><code class="language-python">pl.concat([df, df2])</code></pre>
           </div>
 
@@ -305,7 +306,7 @@ df.tail(n=2)</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Append columns of DataFrames</p>
+            <p>データフレームの列を追加する</p>
             <pre><code class="language-python">pl.concat([df, df3], how="horizontal")</code></pre>
           </div>
 
@@ -314,7 +315,7 @@ df.tail(n=2)</code></pre>
               <img src="images/melt.svg" style="height: 4.4rem" />
             </div>
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.melt.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/transformations/melt/"
               target="_blank"
             >
               <span class="icon"
@@ -324,7 +325,7 @@ df.tail(n=2)</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Gather columns into rows</p>
+            <p>列を行に集約する</p>
             <pre><code class="hljs nohighlight">df.melt(
   <span class="is-underlined underlined-green">id_vars</span>=<span class="hljs-string">"nrs"</span>,
   <span class="is-underlined underlined-yellow">value</span><span class="is-underlined underlined-red">_vars</span>=[<span class="hljs-string">"names"</span>, <span class="hljs-string">"groups"</span>]
@@ -335,7 +336,7 @@ df.tail(n=2)</code></pre>
               <img src="images/pivot.svg" style="height: 3.9rem" />
             </div>
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.pivot.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/transformations/pivot/"
               target="_blank"
             >
               <span class="icon"
@@ -345,13 +346,13 @@ df.tail(n=2)</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Spread rows into columns</p>
+            <p>行を列に展開する</p>
             <pre><code class="hljs nohighlight">df.pivot(<span class="is-underlined underlined-yellow">values</span>=<span class="hljs-string">"nrs"</span>, <span class="is-underlined underlined-green">index</span>=<span class="hljs-string">"groups"</span>,
          <span class="is-underlined underlined-red">columns</span>=<span class="hljs-string">"names"</span>)</code></pre>
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.sort.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/expressions/aggregation/" # リンクが日本語版に存在していない。
               target="_blank"
             >
               <span class="icon"
@@ -361,7 +362,7 @@ df.tail(n=2)</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Order rows by values of a column</p>
+            <p>列の値で行を並べ替える</p>
             <pre><code class="language-python"># low to high
 df.sort("random")
 
@@ -370,7 +371,7 @@ df.sort("random", reverse=True)</code></pre>
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.rename.html"
+              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.rename.html" # 対応する日本語版のリンクがない
               target="_blank"
             >
               <span class="icon"
@@ -380,12 +381,12 @@ df.sort("random", reverse=True)</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Rename the columns of a DataFrame</p>
+            <p>データフレームの列名を変更する</p>
             <pre><code class="language-python">df.rename({"nrs": "idx"})</code></pre>
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.drop.html"
+              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.drop.html" # 対応する日本語版のリンクがない
               target="_blank"
             >
               <span class="icon"
@@ -395,41 +396,41 @@ df.sort("random", reverse=True)</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Drop columns from DataFrame</p>
+            <p>データフレームから列を削除する</p>
             <pre><code class="language-python">df.drop(["names", "random"])</code></pre>
           </div>
         </div>
 
         <div class="column is-3">
-          <h3>Summarize Data</h3>
+          <h3>データを要約する</h3>
           <div class="group">
-            <p>Count number of rows with each unique value of variable</p>
+            <p>変数ごとのユニークな値に基づいて行数を数える</p>
             <pre><code class="language-python">df["groups"].value_counts()</code></pre>
           </div>
           <div class="group">
-            <p># of rows in DataFrame</p>
+            <p>データフレームの行数</p>
             <pre><code class="language-python">len(df)
 # or
 df.height</code></pre>
           </div>
           <div class="group">
-            <p>Tuple of # of rows, # of columns in DataFrame</p>
+            <p>データフレームの行数と列数のタプル</p>
             <pre><code class="language-python">df.shape</code></pre>
           </div>
           <div class="group">
-            <p># of distinct values in a column</p>
+            <p>列内のユニークな値の数</p>
             <pre><code class="language-python">df["groups"].n_unique()</code></pre>
           </div>
           <div class="group">
             <div class="image">
               <img src="images/describe.svg" style="height: 2.6rem" />
             </div>
-            <p>Basic descriptive and statistics for each column</p>
+            <p>各列の基本的な記述統計量</p>
             <pre><code class="language-python">df.describe()</code></pre>
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars-book/user-guide/dsl/expressions.html#various-aggregations"
+              href="https://polars-ja.github.io/docs-ja/user-guide/expressions/aggregation/"
               target="_blank"
             >
               <span class="icon"
@@ -439,7 +440,7 @@ df.height</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Aggregation functions</p>
+            <p>集計関数</p>
             <pre><code class="language-python">df.select(
     [
       # Sum values
@@ -507,13 +508,13 @@ df.height</code></pre>
     <div class="page">
       <div class="columns content-columns">
         <div class="column is-3">
-          <h3>Group Data</h3>
+          <h3>データのグループ化</h3>
           <div class="image">
             <img src="images/groupby.svg" style="height: 4.64rem" />
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars-book/user-guide/dsl/groupby.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/concepts/contexts/#_4"
               target="_blank"
             >
               <span class="icon"
@@ -524,16 +525,15 @@ df.height</code></pre>
                   /></svg></span
             ></a>
             <p>
-              Group by values in column named "col", returning a GroupBy object
+              列名「col」で値ごとにグループ化し、GroupByオブジェクトを返す
             </p>
-            <pre><code class="language-python">df.groupby("groups")</code></pre>
+            <pre><code class="language-python">df.group_by("groups")</code></pre>
           </div>
           <div class="group">
             <p>
-              All of the aggregation functions from above can be applied to a
-              group as well
+              上記のすべての集計関数は、グループにも適用できます。
             </p>
-            <pre><code class="language-python">df.groupby(by="groups").agg(
+            <pre><code class="language-python">df.group_by(by="groups").agg(
   [
       # Sum values
       pl.sum("random").alias("sum"),
@@ -557,22 +557,20 @@ df.height</code></pre>
 
       # Mean
       pl.mean("random").alias("mean"),
-
       # Quantile
       pl.quantile("random", 0.75) \
         .alias("quantile_0.75"),
       # or
       pl.col("random").quantile(0.75) \
         .alias("other_quantile_0.75"),
-
       # First value
       pl.first("random").alias("first"),
   ]
 )</code></pre>
           </div>
           <div class="group">
-            <p>Additional GroupBy functions</p>
-            <pre><code class="language-python">df.groupby(by="groups").agg(
+            <p>追加のGroupBy関数</p>
+            <pre><code class="language-python">df.group_by(by="groups").agg(
   [
     # Count the number of values in each group
     pl.count("random").alias("size"),
@@ -587,13 +585,13 @@ df.height</code></pre>
         </div>
 
         <div class="column is-3">
-          <h3>Handling Missing Data</h3>
+          <h3>欠損データの処理</h3>
           <div class="group">
             <div class="image">
               <img src="images/drop_nulls.svg" style="height: 3.3rem" />
             </div>
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.drop_nulls.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/expressions/missing-data/" # リンクが日本語版に存在していない。
               target="_blank"
             >
               <span class="icon"
@@ -603,7 +601,7 @@ df.height</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Drop rows with any column having a null value</p>
+            <p>任意の列にnull値が含まれる行を削除する</p>
             <pre><code class="language-python">df.drop_nulls()</code></pre>
           </div>
           <div class="group">
@@ -611,7 +609,7 @@ df.height</code></pre>
               <img src="images/fill_null_value.svg" style="height: 3.3rem" />
             </div>
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.fill_null.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/expressions/missing-data/#_3"
               target="_blank"
             >
               <span class="icon"
@@ -621,23 +619,23 @@ df.height</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Replace null values with given value</p>
+            <p>指定された値でnull値を置換する</p>
             <pre><code class="language-python">df.fill_null(42)</code></pre>
           </div>
           <div class="group">
             <div class="image">
               <img src="images/fill_null_forward.svg" style="height: 3.3rem" />
             </div>
-            <p>Replace null values using forward strategy</p>
+            <p>前の行の値を使用してnull値を置換する</p>
             <pre><code class="language-python">df.fill_null(strategy="forward")</code></pre>
             <p>
-              Other fill strategies are "backward", "min", "max", "mean", "zero"
-              and "one"
+              他の補完方法には "backward", "min", "max", "mean", "zero"
+              "one" があります。
             </p>
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.fill_nan.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/expressions/missing-data/#notanumber-nan"
               target="_blank"
             >
               <span class="icon"
@@ -647,17 +645,17 @@ df.height</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Replace floating point NaN values with given value</p>
+            <p>浮動小数点のNaN値を指定された値に置換する</p>
             <pre><code class="language-python">df.fill_nan(42)</code></pre>
           </div>
 
-          <h3>Make New Columns</h3>
+          <h3>新しい列を作成する</h3>
           <div class="image">
             <img src="images/new_columns.svg" style="height: 3.5rem" />
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.with_column.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/concepts/contexts/#_2"
               target="_blank"
             >
               <span class="icon"
@@ -667,7 +665,7 @@ df.height</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Add a new columns to the DataFrame</p>
+            <p>データフレームに新しい列を追加する</p>
             <pre><code class="language-python">df.with_column(
   (pl.col("random") * pl.col("nrs")) \
     .alias("product")
@@ -675,7 +673,7 @@ df.height</code></pre>
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.with_columns.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/concepts/contexts/#_2"
               target="_blank"
             >
               <span class="icon"
@@ -685,7 +683,7 @@ df.height</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Add several new columns to the DataFrame</p>
+            <p>データフレームに複数の新しい列を追加する</p>
             <pre><code class="language-python">df.with_columns(
     [
         (pl.col("random") * pl.col("nrs")) \
@@ -697,7 +695,7 @@ df.height</code></pre>
           </div>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.with_row_count.html"
+              href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.with_row_count.html" # 対応する日本語版のリンクがない
               target="_blank"
             >
               <span class="icon"
@@ -707,18 +705,18 @@ df.height</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Add a column at index 0 that counts the rows</p>
+            <p>インデックス0に行数をカウントする列を追加する</p>
             <pre><code class="language-python">df.with_row_count()</code></pre>
           </div>
         </div>
 
         <div class="column is-3">
-          <h3>Rolling Functions</h3>
+          <h3>ローリング関数</h3>
           <div class="image">
             <img src="images/rolling_functions.svg" style="height: 3.85rem" />
           </div>
           <div class="group">
-            <p>The following rolling functions are available</p>
+            <p>利用可能なローリング関数は以下の通りです</p>
             <pre><code class="language-python">df.select(
     [
         # Rolling maximum value
@@ -774,16 +772,14 @@ df.height</code></pre>
         pl.col("random") \
           .rolling_apply(
             function=np.nanstd, window_size=2) \
-          .alias("rolling_apply"),
-    ]
-)</code></pre>
+          .alias("rolling_apply")])</code></pre>
           </div>
         </div>
         <div class="column is-3">
-          <h3>Window Functions</h3>
+          <h3>ウィンドウ関数</h3>
           <div class="group">
             <a
-              href="https://pola-rs.github.io/polars-book/user-guide/notebooks/introduction_polars-py.html#window-functions"
+              href="https://polars-ja.github.io/docs-ja/user-guide/expressions/window/"
               target="_blank"
             >
               <span class="icon"
@@ -794,7 +790,8 @@ df.height</code></pre>
                   /></svg></span
             ></a>
             <p>
-              Window functions allow to group by several columns simultaneously
+              ウィンドウ関数を使用すると、
+              複数の列で同時にグループ化することができます。
             </p>
             <pre><code class="language-python">df.select(
     [
@@ -808,13 +805,13 @@ df.height</code></pre>
 )</code></pre>
           </div>
 
-          <h3>Combine Data Sets</h3>
+          <h3>データセットの結合</h3>
           <div class="group">
             <div class="image">
               <img src="images/inner_join.svg" style="height: 3.2rem" />
             </div>
             <a
-              href="https://pola-rs.github.io/polars-book/user-guide/howcani/combining_data/joining.html"
+              href="https://polars-ja.github.io/docs-ja/user-guide/sql/select/#join"
               target="_blank"
             >
               <span class="icon"
@@ -824,9 +821,9 @@ df.height</code></pre>
                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                   /></svg></span
             ></a>
-            <p>Inner Join</p>
+            <p>内部結合</p>
             <p class="description">
-              Retains only rows with a match in the other set.
+              他のセットに一致する行のみを保持します。
             </p>
             <pre><code class="language-python">df.join(df4, on="nrs")
 # or
@@ -836,17 +833,17 @@ df.join(df4, on="nrs", how="inner")</code></pre>
             <div class="image">
               <img src="images/left_join.svg" style="height: 3.2rem" />
             </div>
-            <p>Left Join</p>
-            <p class="description">Retains each row from "left" set (df).</p>
+            <p>左結合</p>
+            <p class="description">"left" セット (データフレーム) の各行を保持します。</p>
             <pre><code class="language-python">df.join(df4, on="nrs", how="left")</code></pre>
           </div>
           <div class="group">
             <div class="image">
               <img src="images/outer_join.svg" style="height: 3.82rem" />
             </div>
-            <p>Outer Join</p>
+            <p>外部結合</p>
             <p class="description">
-              Retains each row, even if no other matching row exists.
+              一致する行が存在しない場合でも、各行を保持します。
             </p>
             <pre><code class="language-python">df.join(df4, on="nrs", how="outer")</code></pre>
           </div>
@@ -854,9 +851,9 @@ df.join(df4, on="nrs", how="inner")</code></pre>
             <div class="image">
               <img src="images/anti_join.svg" style="height: 3.79rem" />
             </div>
-            <p>Anti Join</p>
+            <p>アンチ結合</p>
             <p class="description">
-              Contains all rows from df that do not have a match in df4.
+              df には、df4 と一致しない行がすべて含まれています。
             </p>
             <pre><code class="language-python">df.join(df4, on="nrs", how="anti")</code></pre>
           </div>
