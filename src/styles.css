@@ -9,6 +9,7 @@ Colors (https://colorhunt.co/palette/ff6b6bffd93d6bcb774d96ff):
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Fira+Code');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
 :root {
     --primary-color: #24292E;
@@ -20,7 +21,7 @@ Colors (https://colorhunt.co/palette/ff6b6bffd93d6bcb774d96ff):
 }
 
 body {
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', 'Noto Sans JP', sans-serif;
 }
 
 code {
