@@ -27,7 +27,7 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add ./public/resume.pdf
+        git add ./docs/Polars_Cheat_Sheet_Ja.pdf
         git commit -m 'Add generated PDF'
         git push
       env:
