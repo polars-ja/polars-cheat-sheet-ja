@@ -1,0 +1,24 @@
+name: Convert HTML to PDF
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: html to pdf
+      uses: fifsky/html-to-pdf-action@master
+      with:
+        htmlFile: ./src/index.html
+        outputFile: ./docs/Polars_Cheat_Sheet_Ja.pdf
+        pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
