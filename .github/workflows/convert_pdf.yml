@@ -26,7 +26,7 @@ jobs:
       with:
         htmlFile: ./src/index.html
         outputFile: ./docs/Polars_Cheat_Sheet_Ja.pdf
-        pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
+        pdfOptions: '{"format": "A4", "landscape": true, "printBackground": true, "pageRanges": "1-2"}'
 
     - name: Commit and push changes
       run: |
