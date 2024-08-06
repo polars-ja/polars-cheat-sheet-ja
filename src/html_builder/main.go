@@ -9,6 +9,7 @@ import (
 func main() {
 	tmpl := template.Must(template.ParseFiles(
 		"source/header.html",
+		"source/title.html",
 		"source/template.html",
 	))
 
