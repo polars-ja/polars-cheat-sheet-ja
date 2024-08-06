@@ -5,16 +5,11 @@
     <div class="page">
       <div class="columns content-columns">
         <div class="column is-3">
-        {{ template "title" . }}
+            {{ template "title" . }}
 
           <h3>General</h3>
-
             {{ template "group_install" . }}
-
-          <div class="group">
-            <h4>Import</h4>
-            <pre><code class="language-python">import polars as pl</code></pre>
-          </div>
+            {{ template "group_import" . }}
 
           <h3>データフレームの作成/読み込み</h3>
           <div class="group">
