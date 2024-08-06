@@ -7,11 +7,8 @@ import (
 )
 
 func main() {
-	tmpl := template.Must(template.ParseFiles(
-		"source/header.html",
-		"source/title.html",
-		"source/template.html",
-	))
+	tmpl := template.Must(template.ParseGlob("source/*.html"))
+	tmpl = template.Must(tmpl.ParseGlob("source/group/*.html"))
 
 	// 出力ファイルを作成
 	f, err := os.Create("target/output.html")
