@@ -20,39 +20,33 @@
                     {{ template "group_expressions" . }}
                 </div>
 
-            <div class="column is-3">
-                <h3>観測値の部分集合 - 行</h3>
-                <div class="image">
-                    <img src="images/subset_observations.svg" style="height: 3.16rem" />
-                </div>
-                {{ template "group_filter_method" . }}
-                {{ template "group_sample_method" . }}
-                {{ template "group_head_tail_method" . }}
+                <div class="column is-3">
+                    <h3>観測値の部分集合 - 行</h3>
+                    <div class="image">
+                        <img src="images/subset_observations.svg" style="height: 3.16rem" />
+                    </div>
+                    {{ template "group_filter_method" . }}
+                    {{ template "group_sample_method" . }}
+                    {{ template "group_head_tail_method" . }}
 
-                <h3>観測値の部分集合 - 列</h3>
-                <div class="image">
-                    <img src="images/subset_variables.svg" style="height: 2.64rem" />
-                </div>
-                {{ template "group_select_method" . }}
-                {{ template "group_select_method_with_regex" . }}
+                    <h3>観測値の部分集合 - 列</h3>
+                    <div class="image">
+                        <img src="images/subset_variables.svg" style="height: 2.64rem" />
+                    </div>
+                    {{ template "group_select_method" . }}
+                    {{ template "group_select_method_with_regex" . }}
 
-                <h3>部分集合 - 行と列</h3>
-                <div class="image">
-                    <img
-                        src="images/subsets_rows_and_columns.svg"
-                        style="height: 3.16rem"
-                    />
+                    <h3>部分集合 - 行と列</h3>
+                    <div class="image">
+                        <img
+                            src="images/subsets_rows_and_columns.svg"
+                            style="height: 3.16rem"
+                        />
+                    </div>
+                    {{ template "group_select_row_2_4" . }}
+                    {{ template "group_select_columns_1_3" . }}
+                    {{ template "group_select_rows_with_condition" . }}
                 </div>
-                {{ template "group_select_row_2_4" . }}
-                {{ template "group_select_columns_1_3" . }}
-          <div class="group">
-            <p>
-              論理条件を満たす行を選択し、特定の列のみを抽出する
-
-            </p>
-            <pre><code class="language-python">df[df["random"] > 0.5, ["names", "groups"]]</code></pre>
-          </div>
-        </div>
 
         <div class="column is-3">
           <h3>データの整形 - レイアウト変更、並べ替え、名前変更</h3>
