@@ -1,48 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  {{ template "header" . }}
-  <body>
-    <div class="page">
-      <div class="columns content-columns">
-        <div class="column is-3">
-            {{ template "title" . }}
+    {{ template "header" . }}
+    <body>
+        <div class="page">
+            <div class="columns content-columns">
+                <div class="column is-3">
+                    {{ template "title" . }}
 
-          <h3>General</h3>
-            {{ template "group_install" . }}
-            {{ template "group_import" . }}
+                    <h3>General</h3>
+                    {{ template "group_install" . }}
+                    {{ template "group_import" . }}
 
-          <h3>データフレームの作成/読み込み</h3>
-            {{ template "group_create_dataframe" . }}
-            {{ template "group_read_csv" . }}
-            {{ template "group_read_parquet" . }}
+                    <h3>データフレームの作成/読み込み</h3>
+                    {{ template "group_create_dataframe" . }}
+                    {{ template "group_read_csv" . }}
+                    {{ template "group_read_parquet" . }}
 
-          <h3>Expressions</h3>
-          <div class="group">
-            <a
-              href="https://polars-ja.github.io/docs-ja/user-guide/expressions/operators/"
-              target="_blank"
-            >
-              <span class="icon"
-                ><svg viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                  /></svg></span
-            ></a>
-            <p>
-              Polarsのエクスプレッションは順番に
-              実行することができ、コードの可読性が向上します。
-            </p>
-            <pre><code class="language-python">df \ 
-  .filter(pl.col("nrs") < 4) \
-  .group_by("groups") \
-  .agg(pl \
-  .all() \
-  .sum()
-)
-</code></pre>
-          </div>
-        </div>
+                    <h3>Expressions</h3>
+                    {{ template "group_expressions" . }}
+            </div>
 
         <div class="column is-3">
           <h3>観測値の部分集合 - 行</h3>
