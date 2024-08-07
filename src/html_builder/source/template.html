@@ -20,41 +20,20 @@
                     {{ template "group_expressions" . }}
                 </div>
 
-        <div class="column is-3">
-          <h3>観測値の部分集合 - 行</h3>
-          <div class="image">
-            <img src="images/subset_observations.svg" style="height: 3.16rem" />
-          </div>
-            {{ template "group_filter_method" . }}
-            {{ template "group_sample_method" . }}
-          <div class="group">
-            <p>先頭、末尾の行を選択する</p>
-            <pre><code class="language-python"># Select first n rows
-df.head(n=2)
+            <div class="column is-3">
+                <h3>観測値の部分集合 - 行</h3>
+                <div class="image">
+                    <img src="images/subset_observations.svg" style="height: 3.16rem" />
+                </div>
+                {{ template "group_filter_method" . }}
+                {{ template "group_sample_method" . }}
+                {{ template "group_head_tail_method" . }}
 
-# Select last n rows.
-df.tail(n=2)</code></pre>
-          </div>
-
-          <h3>観測値の部分集合 - 列</h3>
-          <div class="image">
-            <img src="images/subset_variables.svg" style="height: 2.64rem" />
-          </div>
-          <div class="group">
-            <a
-              href="https://polars-ja.github.io/docs-ja/user-guide/expressions/column-selections/"
-              target="_blank"
-            >
-              <span class="icon"
-                ><svg viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                  /></svg></span
-            ></a>
-            <p>特定の名前を持つ複数の列を選択する</p>
-            <pre><code class="language-python">df.select(["nrs", "names"])</code></pre>
-          </div>
+                <h3>観測値の部分集合 - 列</h3>
+                <div class="image">
+                    <img src="images/subset_variables.svg" style="height: 2.64rem" />
+                </div>
+                {{ template "group_select_method" . }}
           <div class="group">
             <a
               href="https://polars-ja.github.io/docs-ja/user-guide/expressions/column-selections/#_2" # リンクが日本語版に存在していない。
