@@ -64,10 +64,7 @@
                     {{ template "group_value_counts" . }}
                     {{ template "group_length_height" . }}
                     {{ template "group_shape_property" . }}
-          <div class="group">
-            <p>列内のユニークな値の数</p>
-            <pre><code class="language-python">df["groups"].n_unique()</code></pre>
-          </div>
+                    {{ template "group_n_unique_method" . }}
           <div class="group">
             <div class="image">
               <img src="images/describe.svg" style="height: 2.6rem" />
