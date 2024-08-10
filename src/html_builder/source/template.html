@@ -59,12 +59,9 @@
                     {{ template "group_drop_method" . }}
                 </div>
 
-        <div class="column is-3">
-          <h3>データを要約する</h3>
-          <div class="group">
-            <p>変数ごとのユニークな値に基づいて行数を数える</p>
-            <pre><code class="language-python">df["groups"].value_counts()</code></pre>
-          </div>
+                <div class="column is-3">
+                    <h3>データを要約する</h3>
+                    {{ template "group_value_counts" . }}
           <div class="group">
             <p>データフレームの行数</p>
             <pre><code class="language-python">len(df)
