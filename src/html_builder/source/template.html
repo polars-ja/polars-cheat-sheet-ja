@@ -63,10 +63,7 @@
                     <h3>データを要約する</h3>
                     {{ template "group_value_counts" . }}
                     {{ template "group_length_height" . }}
-          <div class="group">
-            <p>データフレームの行数と列数のタプル</p>
-            <pre><code class="language-python">df.shape</code></pre>
-          </div>
+                    {{ template "group_shape_property" . }}
           <div class="group">
             <p>列内のユニークな値の数</p>
             <pre><code class="language-python">df["groups"].n_unique()</code></pre>
