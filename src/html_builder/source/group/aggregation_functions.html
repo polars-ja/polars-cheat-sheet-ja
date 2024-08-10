@@ -1,0 +1,54 @@
+{{ define "group_aggregation_functions" }}
+<div class="group">
+    <a
+        href="https://polars-ja.github.io/docs-ja/user-guide/expressions/aggregation/"
+        target="_blank"
+    >
+        <span class="icon">
+            <svg viewBox="0 0 24 24">
+                <path
+                    fill="currentColor"
+                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                />
+            </svg>
+        </span>
+    </a>
+    <p>集計関数</p>
+    <pre><code class="language-python">df.select(
+    [
+      # Sum values
+      pl.sum("random").alias("sum"),
+
+      # Minimum value
+      pl.min("random").alias("min"),
+
+      # Maximum value
+      pl.max("random").alias("max"),
+      # or
+      pl.col("random").max().alias("other_max"),
+
+      # Standard deviation
+      pl.std("random").alias("std dev"),
+
+      # Variance
+      pl.var("random").alias("variance"),
+
+      # Median
+      pl.median("random").alias("median"),
+
+      # Mean
+      pl.mean("random").alias("mean"),
+
+      # Quantile
+      pl.quantile("random", 0.75) \
+        .alias("quantile_0.75"),
+      # or
+      pl.col("random").quantile(0.75) \
+        .alias("other_quantile_0.75"),
+
+      # First value
+      pl.first("random").alias("first"),
+    ]
+)</code></pre>
+</div>
+{{ end }}
