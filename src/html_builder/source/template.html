@@ -69,30 +69,10 @@
                     {{ template "group_aggregation_functions" . }}
                 </div>
             </div>
-
-      <div class="columns info-columns-1">
-        <div class="column is-half">
-          <span class="infos">
-            Download at
-            <a href="https://polars-ja.github.io/polars-cheat-sheet-ja/" target="_blank"
-              >polars-cheat-sheet-ja</a
-            >
-          </span>
+            <div class="columns info-columns-1">
+                {{ template "info_column" . }}
+            </div>
         </div>
-        <div class="column is-half has-text-right">
-          <span class="infos-small"
-            >翻訳元のリンク (<a href="https://franzdiebold.github.io/polars-cheat-sheet/Polars_cheat_sheet.pdf" target="_blank"
-              >Link</a
-            >), inspired by
-            <a
-              href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf"
-              target="_blank"
-              >Pandas Cheat Sheet</a
-            ></span
-          >
-        </div>
-      </div>
-    </div>
 
     <div class="page">
       <div class="columns content-columns">
@@ -450,26 +430,7 @@ df.join(df4, on="nrs", how="inner")</code></pre>
       </div>
 
       <div class="columns info-columns-2">
-        <div class="column is-half">
-          <span class="infos">
-            Download at
-            <a href="https://polars-ja.github.io/polars-cheat-sheet-ja/" target="_blank"
-              >polars-cheat-sheet-ja</a
-            >
-          </span>
-        </div>
-        <div class="column is-half has-text-right">
-          <span class="infos-small"
-            >翻訳元のリンク (<a href="https://franzdiebold.github.io/polars-cheat-sheet/Polars_cheat_sheet.pdf" target="_blank"
-              >Link</a
-            >), inspired by
-            <a
-              href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf"
-              target="_blank"
-              >Pandas Cheat Sheet</a
-            ></span
-          >
-        </div>
+        {{ template "info_column" . }}
       </div>
     </div>
   </body>
