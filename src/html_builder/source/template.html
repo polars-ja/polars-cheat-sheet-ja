@@ -86,21 +86,21 @@
                     {{ template "group_aggregate_group_object_added" . }}
                 </div>
 
-        <div class="column is-3">
-          <h3>欠損データの処理</h3>
-            {{ template "group_drop_nulls_method" . }}
-            {{ template "group_fill_null_method" . }}
-            {{ template "group_fill_null_forward_method" . }}
-            {{ template "group_fill_nan_method" . }}
+                <div class="column is-3">
+                    <h3>欠損データの処理</h3>
+                    {{ template "group_drop_nulls_method" . }}
+                    {{ template "group_fill_null_method" . }}
+                    {{ template "group_fill_null_forward_method" . }}
+                    {{ template "group_fill_nan_method" . }}
 
-            <h3>新しい列を作成する</h3>
-            <div class="image">
-                <img src="images/new_columns.svg" style="height: 3.5rem" />
-            </div>
-            {{ template "group_with_column_method" . }}
-            {{ template "group_with_column_method_multiple" . }}
-            {{ template "group_with_row_count_method" . }}
-        </div>
+                    <h3>新しい列を作成する</h3>
+                    <div class="image">
+                        <img src="images/new_columns.svg" style="height: 3.5rem" />
+                    </div>
+                    {{ template "group_with_column_method" . }}
+                    {{ template "group_with_column_method_multiple" . }}
+                    {{ template "group_with_row_count_method" . }}
+                </div>
 
         <div class="column is-3">
           <h3>ローリング関数</h3>
