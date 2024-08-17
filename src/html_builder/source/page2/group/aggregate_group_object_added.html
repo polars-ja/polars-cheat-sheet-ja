@@ -1,0 +1,16 @@
+{{ define "group_aggregate_group_object_added" }}
+<div class="group">
+    <p>追加のGroupBy関数</p>
+    <pre><code class="language-python">df.group_by(by="groups").agg(
+  [
+    # Count the number of values in each group
+    pl.count("random").alias("size"),
+
+    # Sample one element in each group
+    pl.col("names").apply(
+      lambda group_df: group_df.sample(1)
+    ),
+  ]
+)</code></pre>
+</div>
+{{ end }}

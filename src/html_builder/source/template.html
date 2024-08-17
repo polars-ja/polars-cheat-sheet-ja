@@ -76,28 +76,15 @@
 
         <div class="page">
             <div class="columns content-columns">
-            <div class="column is-3">
-                <h3>データのグループ化</h3>
-                <div class="image">
-                    <img src="images/groupby.svg" style="height: 4.64rem" />
+                <div class="column is-3">
+                    <h3>データのグループ化</h3>
+                    <div class="image">
+                        <img src="images/groupby.svg" style="height: 4.64rem" />
+                    </div>
+                    {{ template "group_group_by_col" . }}
+                    {{ template "group_aggregate_group_object" . }}
+                    {{ template "group_aggregate_group_object_added" . }}
                 </div>
-                {{ template "group_group_by_col" . }}
-                {{ template "group_aggregate_group_object" . }}
-          <div class="group">
-            <p>追加のGroupBy関数</p>
-            <pre><code class="language-python">df.group_by(by="groups").agg(
-  [
-    # Count the number of values in each group
-    pl.count("random").alias("size"),
-
-    # Sample one element in each group
-    pl.col("names").apply(
-      lambda group_df: group_df.sample(1)
-    ),
-  ]
-)</code></pre>
-          </div>
-        </div>
 
         <div class="column is-3">
           <h3>欠損データの処理</h3>
