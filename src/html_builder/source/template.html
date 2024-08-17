@@ -82,45 +82,7 @@
                     <img src="images/groupby.svg" style="height: 4.64rem" />
                 </div>
                 {{ template "group_group_by_col" . }}
-          <div class="group">
-            <p>
-              上記のすべての集計関数は、グループにも適用できます。
-            </p>
-            <pre><code class="language-python">df.group_by(by="groups").agg(
-  [
-      # Sum values
-      pl.sum("random").alias("sum"),
-
-      # Minimum value
-      pl.min("random").alias("min"),
-
-      # Maximum value
-      pl.max("random").alias("max"),
-      # or
-      pl.col("random").max().alias("other_max"),
-
-      # Standard deviation
-      pl.std("random").alias("std_dev"),
-
-      # Variance
-      pl.var("random").alias("variance"),
-
-      # Median
-      pl.median("random").alias("median"),
-
-      # Mean
-      pl.mean("random").alias("mean"),
-      # Quantile
-      pl.quantile("random", 0.75) \
-        .alias("quantile_0.75"),
-      # or
-      pl.col("random").quantile(0.75) \
-        .alias("other_quantile_0.75"),
-      # First value
-      pl.first("random").alias("first"),
-  ]
-)</code></pre>
-          </div>
+                {{ template "group_aggregate_group_object" . }}
           <div class="group">
             <p>追加のGroupBy関数</p>
             <pre><code class="language-python">df.group_by(by="groups").agg(
