@@ -9,6 +9,7 @@ import (
 func main() {
 	tmpl := template.Must(template.ParseGlob("source/*.html"))
 	tmpl = template.Must(tmpl.ParseGlob("source/page1/group/*.html"))
+	tmpl = template.Must(tmpl.ParseGlob("source/page2/group/*.html"))
 
 	// 出力ファイルを作成
 	f, err := os.Create("target/output.html")
