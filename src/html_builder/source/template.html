@@ -93,28 +93,11 @@
             {{ template "group_fill_null_forward_method" . }}
             {{ template "group_fill_nan_method" . }}
 
-          <h3>新しい列を作成する</h3>
-          <div class="image">
-            <img src="images/new_columns.svg" style="height: 3.5rem" />
-          </div>
-          <div class="group">
-            <a
-              href="https://polars-ja.github.io/docs-ja/user-guide/concepts/contexts/#_2"
-              target="_blank"
-            >
-              <span class="icon"
-                ><svg viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                  /></svg></span
-            ></a>
-            <p>データフレームに新しい列を追加する</p>
-            <pre><code class="language-python">df.with_column(
-  (pl.col("random") * pl.col("nrs")) \
-    .alias("product")
-)</code></pre>
-          </div>
+            <h3>新しい列を作成する</h3>
+            <div class="image">
+                <img src="images/new_columns.svg" style="height: 3.5rem" />
+            </div>
+            {{ template "group_with_column_method" . }}
           <div class="group">
             <a
               href="https://polars-ja.github.io/docs-ja/user-guide/concepts/contexts/#_2"
