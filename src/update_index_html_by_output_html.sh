@@ -2,4 +2,5 @@
 
 cp html_builder/target/output.html ./
 prettier --write output.html
-open output.html
+rm -rf index.html
+cp output.html index.html
