@@ -1,0 +1,19 @@
+{{ define "group_with_row_count_method" }}
+<div class="group">
+    <a
+        href="https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.with_row_count.html" # 対応する日本語版のリンクがない
+        target="_blank"
+    >
+        <span class="icon">
+            <svg viewBox="0 0 24 24">
+                <path
+                    fill="currentColor"
+                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                />
+            </svg>
+        </span>
+    </a>
+    <p>インデックス0に行数をカウントする列を追加する</p>
+    <pre><code class="language-python">df.with_row_count()</code></pre>
+</div>
+{{ end }}

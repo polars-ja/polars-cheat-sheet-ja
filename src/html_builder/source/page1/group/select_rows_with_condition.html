@@ -1,0 +1,9 @@
+{{ define "group_select_rows_with_condition" }}
+<div class="group">
+    <p>
+        論理条件を満たす行を選択し、特定の列のみを抽出する
+
+    </p>
+    <pre><code class="language-python">df[df["random"] > 0.5, ["names", "groups"]]</code></pre>
+</div>
+{{ end }}

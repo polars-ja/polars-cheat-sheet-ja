@@ -1,0 +1,13 @@
+{{ define "group_fill_null_forward_method" }}
+<div class="group">
+    <div class="image">
+        <img src="images/fill_null_forward.svg" style="height: 3.3rem" />
+    </div>
+    <p>前の行の値を使用してnull値を置換する</p>
+    <pre><code class="language-python">df.fill_null(strategy="forward")</code></pre>
+    <p>
+        他の補完方法には "backward", "min", "max", "mean", "zero"
+        "one" があります。
+    </p>
+</div>
+{{ end }}

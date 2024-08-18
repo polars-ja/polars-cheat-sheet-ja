@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{ template "header" . }}
+    <body>
+        <div class="page">
+            <div class="columns content-columns">
+                <div class="column is-3">
+                    {{ template "title" . }}
+
+                    <h3>General</h3>
+                    {{ template "group_install" . }}
+                    {{ template "group_import" . }}
+
+                    <h3>データフレームの作成/読み込み</h3>
+                    {{ template "group_create_dataframe" . }}
+                    {{ template "group_read_csv" . }}
+                    {{ template "group_read_parquet" . }}
+
+                    <h3>Expressions</h3>
+                    {{ template "group_expressions" . }}
+                </div>
+
+                <div class="column is-3">
+                    <h3>観測値の部分集合 - 行</h3>
+                    <div class="image">
+                        <img src="images/subset_observations.svg" style="height: 3.16rem" />
+                    </div>
+                    {{ template "group_filter_method" . }}
+                    {{ template "group_sample_method" . }}
+                    {{ template "group_head_tail_method" . }}
+
+                    <h3>観測値の部分集合 - 列</h3>
+                    <div class="image">
+                        <img src="images/subset_variables.svg" style="height: 2.64rem" />
+                    </div>
+                    {{ template "group_select_method" . }}
+                    {{ template "group_select_method_with_regex" . }}
+
+                    <h3>部分集合 - 行と列</h3>
+                    <div class="image">
+                        <img
+                            src="images/subsets_rows_and_columns.svg"
+                            style="height: 3.16rem"
+                        />
+                    </div>
+                    {{ template "group_select_rows_2_4" . }}
+                    {{ template "group_select_columns_1_3" . }}
+                    {{ template "group_select_rows_with_condition" . }}
+                </div>
+
+                <div class="column is-3">
+                    <h3>データの整形 - レイアウト変更、並べ替え、名前変更</h3>
+                    {{ template "group_concat_method_vertical" . }}
+                    {{ template "group_concat_method_horizontal" . }}
+                    {{ template "group_melt_method" . }}
+                    {{ template "group_pivot_method" . }}
+                    {{ template "group_sort_method" . }}
+                    {{ template "group_rename_method" . }}
+                    {{ template "group_drop_method" . }}
+                </div>
+
+                <div class="column is-3">
+                    <h3>データを要約する</h3>
+                    {{ template "group_value_counts" . }}
+                    {{ template "group_length_height" . }}
+                    {{ template "group_shape_property" . }}
+                    {{ template "group_n_unique_method" . }}
+                    {{ template "group_describe_method" . }}
+                    {{ template "group_aggregation_functions" . }}
+                </div>
+            </div>
+            <div class="columns info-columns-1">
+                {{ template "info_column" . }}
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="columns content-columns">
+                <div class="column is-3">
+                    <h3>データのグループ化</h3>
+                    <div class="image">
+                        <img src="images/groupby.svg" style="height: 4.64rem" />
+                    </div>
+                    {{ template "group_group_by_col" . }}
+                    {{ template "group_aggregate_group_object" . }}
+                    {{ template "group_aggregate_group_object_added" . }}
+                </div>
+
+                <div class="column is-3">
+                    <h3>欠損データの処理</h3>
+                    {{ template "group_drop_nulls_method" . }}
+                    {{ template "group_fill_null_method" . }}
+                    {{ template "group_fill_null_forward_method" . }}
+                    {{ template "group_fill_nan_method" . }}
+
+                    <h3>新しい列を作成する</h3>
+                    <div class="image">
+                        <img src="images/new_columns.svg" style="height: 3.5rem" />
+                    </div>
+                    {{ template "group_with_column_method" . }}
+                    {{ template "group_with_column_method_multiple" . }}
+                    {{ template "group_with_row_count_method" . }}
+                </div>
+
+                <div class="column is-3">
+                    <h3>ローリング関数</h3>
+                    <div class="image">
+                        <img src="images/rolling_functions.svg" style="height: 3.85rem" />
+                    </div>
+                    {{ template "group_rolling_methods" . }}
+                </div>
+
+                <div class="column is-3">
+                    <h3>ウィンドウ関数</h3>
+                    {{ template "group_window_function" . }}
+
+                    <h3>データセットの結合</h3>
+                    {{ template "group_inner_join" . }}
+                    {{ template "group_left_join" . }}
+                    {{ template "group_outer_join" . }}
+                    {{ template "group_anti_join" . }}
+                </div>
+            </div>
+            <div class="columns info-columns-2">
+                {{ template "info_column" . }}
+            </div>
+        </div>
+    </body>
+</html>
