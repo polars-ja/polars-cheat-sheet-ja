@@ -1,0 +1,12 @@
+{{ define "group_outer_join" }}
+<div class="group">
+    <div class="image">
+        <img src="images/outer_join.svg" style="height: 3.82rem" />
+    </div>
+    <p>外部結合</p>
+    <p class="description">
+        一致する行が存在しない場合でも、各行を保持します。
+    </p>
+    <pre><code class="language-python">df.join(df4, on="nrs", how="outer")</code></pre>
+</div>
+{{ end }}

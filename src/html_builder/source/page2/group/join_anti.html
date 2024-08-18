@@ -1,0 +1,12 @@
+{{ define "group_anti_join" }}
+<div class="group">
+    <div class="image">
+        <img src="images/anti_join.svg" style="height: 3.79rem" />
+    </div>
+    <p>アンチ結合</p>
+    <p class="description">
+        df には、df4 と一致しない行がすべて含まれています。
+    </p>
+    <pre><code class="language-python">df.join(df4, on="nrs", how="anti")</code></pre>
+</div>
+{{ end }}

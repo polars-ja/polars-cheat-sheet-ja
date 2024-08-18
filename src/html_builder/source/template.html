@@ -102,47 +102,28 @@
                     {{ template "group_with_row_count_method" . }}
                 </div>
 
-            <div class="column is-3">
-                <h3>ローリング関数</h3>
-                <div class="image">
-                    <img src="images/rolling_functions.svg" style="height: 3.85rem" />
+                <div class="column is-3">
+                    <h3>ローリング関数</h3>
+                    <div class="image">
+                        <img src="images/rolling_functions.svg" style="height: 3.85rem" />
+                    </div>
+                    {{ template "group_rolling_methods" . }}
                 </div>
-                {{ template "group_rolling_methods" . }}
-            </div>
 
-            <div class="column is-3">
-                <h3>ウィンドウ関数</h3>
-                {{ template "group_window_function" . }}
+                <div class="column is-3">
+                    <h3>ウィンドウ関数</h3>
+                    {{ template "group_window_function" . }}
 
-                <h3>データセットの結合</h3>
-                {{ template "group_inner_join" . }}
-                {{ template "group_left_join" . }}
-          <div class="group">
-            <div class="image">
-              <img src="images/outer_join.svg" style="height: 3.82rem" />
+                    <h3>データセットの結合</h3>
+                    {{ template "group_inner_join" . }}
+                    {{ template "group_left_join" . }}
+                    {{ template "group_outer_join" . }}
+                    {{ template "group_anti_join" . }}
+                </div>
             </div>
-            <p>外部結合</p>
-            <p class="description">
-              一致する行が存在しない場合でも、各行を保持します。
-            </p>
-            <pre><code class="language-python">df.join(df4, on="nrs", how="outer")</code></pre>
-          </div>
-          <div class="group">
-            <div class="image">
-              <img src="images/anti_join.svg" style="height: 3.79rem" />
+            <div class="columns info-columns-2">
+                {{ template "info_column" . }}
             </div>
-            <p>アンチ結合</p>
-            <p class="description">
-              df には、df4 と一致しない行がすべて含まれています。
-            </p>
-            <pre><code class="language-python">df.join(df4, on="nrs", how="anti")</code></pre>
-          </div>
         </div>
-      </div>
-
-      <div class="columns info-columns-2">
-        {{ template "info_column" . }}
-      </div>
-    </div>
-  </body>
+    </body>
 </html>
